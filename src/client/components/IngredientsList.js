@@ -14,6 +14,7 @@ class IngredientsList extends Component {
     const spiceArr = []
     const vegArr = []
     const fishArr = []
+    const grainArr = []
 
     // console.log(this.props.ingredients)
     const ingredients = this.props.ingredients
@@ -35,6 +36,9 @@ class IngredientsList extends Component {
         case 'fish':
           fishArr.push(<Ingredient key={`food-${ingredient.id}`} ingredient={ingredient} markChecked={this.props.markChecked} />)
             break
+        case 'grain':
+          grainArr.push(<Ingredient key={`food-${ingredient.id}`} ingredient={ingredient} markChecked={this.props.markChecked} />)
+            break
       }
     })
 
@@ -44,26 +48,31 @@ class IngredientsList extends Component {
           <h2>Select Your Ingredients</h2>
           <AutoSearch toggleAuto={this.props.toggleAuto} />
         </div>
-
-        <h3>Dairy</h3>
-        <div className='ingredient-section'>
-          {dairyArr}
-        </div>
-        <h3>Meat</h3>
-        <div className='ingredient-section'>
-          {meatArr}
-        </div>
-        <h3>Fish</h3>
-        <div className='ingredient-section'>
-          {fishArr}
-        </div>
-        <h3>Spices</h3>
-        <div className='ingredient-section'>
-          {spiceArr}
-        </div>
-        <h3>Vegetables</h3>
-        <div className='ingredient-section'>
-          {vegArr}
+        <div className='ingredient-sections'>
+          <h3>Dairy</h3>
+          <div className='ingredient-section'>
+            {dairyArr}
+          </div>
+          <h3>Meat</h3>
+          <div className='ingredient-section'>
+            {meatArr}
+          </div>
+          <h3>Fish</h3>
+          <div className='ingredient-section'>
+            {fishArr}
+          </div>
+          <h3>Bread, grain, pasta</h3>
+          <div className='ingredient-section'>
+            {grainArr}
+          </div>
+          <h3>Vegetables</h3>
+          <div className='ingredient-section'>
+            {vegArr}
+          </div>
+          <h3>Spices</h3>
+          <div className='ingredient-section'>
+            {spiceArr}
+          </div>
         </div>
       </div>
     )

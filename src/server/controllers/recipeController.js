@@ -20,12 +20,14 @@ recipeController.getRecipes = (req, res, next) => {
       }
       //If its coming from the check list and theres only one item
       else urlFoods = searchFoods[0].toLowerCase()
+
+      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${urlFoods}&addRecipeInformation=true&number=${limit}`
     }
     //If its a string coming from the search bar
-    else urlFoods = searchFoods.split(' ').join(',+').toLowerCase()
-
-    // url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${urlFoods}&addRecipeInformation=true&number=${limit}`
-    url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=${urlFoods}&number=${limit}`
+    else {
+      urlFoods = searchFoods.split(' ').join(',+').toLowerCase()
+      url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=${urlFoods}&number=${limit}`
+    }
   }
   //Should hit on first load, default search
   else {

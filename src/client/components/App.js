@@ -211,6 +211,78 @@ class App extends Component {
               checked : false,
               category : 'fish'
             },
+            {
+              id : 34,
+              foodName : 'Garlic',
+              checked : false,
+              category : 'vegetable'
+            },
+            {
+              id : 35,
+              foodName : 'Onion',
+              checked : false,
+              category : 'vegetable'
+            },
+            {
+              id : 36,
+              foodName : 'Bread',
+              checked : false,
+              category : 'grain'
+            },
+            {
+              id : 37,
+              foodName : 'White rice',
+              checked : false,
+              category : 'grain'
+            },
+            {
+              id : 38,
+              foodName : 'Brown rice',
+              checked : false,
+              category : 'grain'
+            },
+            {
+              id : 39,
+              foodName : 'Spaghetti',
+              checked : false,
+              category : 'grain'
+            },
+            {
+              id : 40,
+              foodName : 'Angel hair',
+              checked : false,
+              category : 'grain'
+            },
+            {
+              id : 41,
+              foodName : 'Haddock',
+              checked : false,
+              category : 'fish'
+            },
+            {
+              id : 42,
+              foodName : 'Yogurt',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 43,
+              foodName : 'Greek yogurt',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 44,
+              foodName : 'Skyrr',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 45,
+              foodName : 'Sardines',
+              checked : false,
+              category : 'fish'
+            },
       ],
       autoSearch : false
     }
@@ -286,7 +358,7 @@ class App extends Component {
               <Container recipes={this.state.recipes} ingredients={this.state.ingredients} searchRecipes={this.searchRecipes} markChecked={this.markChecked} toggleAuto={this.toggleAuto} />
             </React.Fragment>
           )} />
-          <Route path='/favs' component={Favs} />
+          <Route path='/favorites' component={Favs} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
         </div>

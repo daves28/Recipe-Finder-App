@@ -29,7 +29,9 @@ if (process.env.NODE_env === "production") {
     return res.status(200).sendFile(path.resolve(__dirname, "../../index.html"))
   });
 }
-
+app.use('/', (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, "../../index.html"))
+})
 /*--------------------*/
 /*-- Error Handling --*/
 /*--------------------*/
