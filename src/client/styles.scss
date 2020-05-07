@@ -3,20 +3,26 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+$base-color: rgb(45, 67, 128);
 header {
   display: flex;
   flex-direction: column;
-  background-color: rgb(86, 55, 114);
+  background-color: $base-color;
   color: white;
   text-align: center;
   height: 15vh;
+  .login-signup {
+    position: absolute;
+    right:35px;
+
+  }
   h1 {
     padding-top: 30px;
     flex: 2;
     font-size: 2.5rem;
   }
   nav {
+    padding-top: 2.5rem;
     padding-bottom: 10px;
   }
   .nav-link {
@@ -34,14 +40,14 @@ header {
 
 .container {
   display: flex;
-  background-color: lighten($color: rgb(86, 55, 114), $amount: 50);
+  background-color: lighten($color: $base-color, $amount: 50);
   height: 85vh
 }
 
 .ingredients-list {
-  background-color: lighten($color: rgb(86, 55, 114), $amount: 60);
+  background-color: lighten($color: $base-color, $amount: 60);
   flex: 1;
-  box-shadow: 1px 1px 4px rgb(86, 55, 114);
+  box-shadow: 1px 1px 4px $base-color;
   display: flex;
   flex-direction: column;
 
@@ -50,19 +56,19 @@ header {
   }
 
   .ingredient-header{
-    border-bottom: 1px solid rgb(86, 55, 114);
+    border-bottom: 1px solid $base-color;
     padding: 14px;
-    color: rgb(86, 55, 114);
+    color: $base-color;
     text-align: center;
   }
   .ingredient-section {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid lighten(rgb(86, 55, 114), 40%);
+    border-bottom: 1px solid lighten($base-color, 40%);
   }
 
   h3 {
-    color: rgb(86, 55, 114);
+    color: $base-color;
     margin: 15px 30px 5px;
   }
   .ingredient {
@@ -77,30 +83,71 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 91.5%;
+    margin:5px;
+    // overflow-y: visible;
   }
 
   .recipe {
-    color: rgb(86, 55, 114);
+    color: $base-color;
+    background-color: white;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-width: 230px;
     max-width: 300px;
+    // min-height: 230px;
+    // max-height: 300px;
     width: auto;
     height: auto;
     margin: 20px;
-    background-color: white;
     padding: 5px;
-    box-shadow: 1px 1px 4px rgb(86, 55, 114);
+    box-shadow: 1px 1px 4px $base-color;
+    animation: fadein 1s;
   }
-  .details {
-    color: lighten(rgb(86, 55, 114), 20%);
+  .recipe-info {
+    bottom: 0;
+    margin-top:20px;
+
+    .details {
+      color: lighten($base-color, 20%);
+    }
+    .recipe-title {
+      margin-bottom:15px;
+      
+      a{
+        text-decoration: none;
+        color: $base-color;
+        font-weight: 550;
+      }
+    }
   }
-  a{
-    margin: 3px;
-    text-decoration: none;
-    color: rgb(86, 55, 114);
-    font-weight: 550;
+  
+  .black-text {
+    color: black;
+    font-weight: 600;
   }
+  .recipe-img{
+    display: flex;
+    justify-content: center;
+    background-color: lighten($base-color, 50%);
+    border-radius: 10px;
+    // animation-delay: 2s;
+      img {
+        align-self: center;;
+        max-width: 210px;
+        max-height: 210px;
+        
+    }
+  }
+  
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 

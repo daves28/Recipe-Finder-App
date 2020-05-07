@@ -1,7 +1,7 @@
 Option to search with just those ingredients or recipes containing those ingredients
-
-Create recipe react component
-
-Parse received data into react components
+Database functionality to login and store favorites
+Memoize Api calls
 
 Store state in database to make it unique to user?
+
+apiKey=fc4f7bc8bd37432684adbe0ec6844a8c

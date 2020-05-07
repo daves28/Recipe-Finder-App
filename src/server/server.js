@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const recipeController = require('./controllers/recipeController')
+const cookieParser = require('cookie-parser')
 
 const app = express();
 const PORT = 3000;
@@ -13,6 +14,7 @@ app.use(
     extended: true,
   })
 );
+app.use(cookieParser())
 
 app.post('/api/recipes', recipeController.getRecipes, (req, res) => {
   return res.status(200).send(res.locals.recipes)

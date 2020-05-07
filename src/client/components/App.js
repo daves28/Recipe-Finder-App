@@ -4,6 +4,8 @@ import Header from './Header.js'
 import Container from './Container.js'
 import Favs from './Favorites.js'
 import axios from 'axios'
+import Login from './Login.js'
+import Signup from './Signup.js'
 
 class App extends Component {
   constructor() {
@@ -155,6 +157,60 @@ class App extends Component {
               checked : false,
               category : 'meat'
             },
+            {
+              id : 25,
+              foodName : 'Steak',
+              checked : false,
+              category : 'meat'
+            },
+            {
+              id : 26,
+              foodName : 'Whipped cream',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 27,
+              foodName : 'Half-n-half',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 28,
+              foodName : 'Eggs',
+              checked : false,
+              category : 'dairy'
+            },
+            {
+              id : 29,
+              foodName : 'Cod',
+              checked : false,
+              category : 'fish'
+            },
+            {
+              id : 30,
+              foodName : 'Herring',
+              checked : false,
+              category : 'fish'
+            },
+            {
+              id : 31,
+              foodName : 'Tilapia',
+              checked : false,
+              category : 'fish'
+            },
+            {
+              id : 32,
+              foodName : 'Tuna',
+              checked : false,
+              category : 'fish'
+            },
+            {
+              id : 33,
+              foodName : 'Salmon',
+              checked : false,
+              category : 'fish'
+            },
       ],
       autoSearch : false
     }
@@ -164,7 +220,7 @@ class App extends Component {
     console.log("New state after updating App.js -> ", this.state)
   }
   componentDidMount() {
-    // this.searchRecipes('Default')
+    this.searchRecipes('Default')
   }
 
   //Send a fetch request to backend to query the Recipe API based on the inputted search value.
@@ -231,6 +287,8 @@ class App extends Component {
             </React.Fragment>
           )} />
           <Route path='/favs' component={Favs} />
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
         </div>
       </Router>
     )

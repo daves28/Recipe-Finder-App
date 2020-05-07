@@ -13,6 +13,7 @@ class IngredientsList extends Component {
     const meatArr = []
     const spiceArr = []
     const vegArr = []
+    const fishArr = []
 
     // console.log(this.props.ingredients)
     const ingredients = this.props.ingredients
@@ -31,6 +32,9 @@ class IngredientsList extends Component {
         case 'vegetable':
           vegArr.push(<Ingredient key={`food-${ingredient.id}`} ingredient={ingredient} markChecked={this.props.markChecked} />)
             break
+        case 'fish':
+          fishArr.push(<Ingredient key={`food-${ingredient.id}`} ingredient={ingredient} markChecked={this.props.markChecked} />)
+            break
       }
     })
 
@@ -48,6 +52,10 @@ class IngredientsList extends Component {
         <h3>Meat</h3>
         <div className='ingredient-section'>
           {meatArr}
+        </div>
+        <h3>Fish</h3>
+        <div className='ingredient-section'>
+          {fishArr}
         </div>
         <h3>Spices</h3>
         <div className='ingredient-section'>
