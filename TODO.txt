@@ -1,0 +1,7 @@
+Option to search with just those ingredients or recipes containing those ingredients
+
+Create recipe react component
+
+Parse received data into react components
+
+Store state in database to make it unique to user?
